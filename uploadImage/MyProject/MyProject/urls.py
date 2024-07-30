@@ -21,5 +21,7 @@ from MyApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home),
+    path('upload',views.image),
+    path('live',views.live)
 
 ]
