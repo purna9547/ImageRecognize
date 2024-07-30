@@ -3,6 +3,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from tensorflow.keras.models import load_model
 import io
+import os
 import cv2
 import numpy as np
 
@@ -15,7 +16,9 @@ def home(request):
 
 @csrf_exempt
 def image(request):
+    print(os.getcwd())
     if request.method == 'POST':
+        
         # Check if 'file' is in request.FILES
         if 'file' in request.FILES:
             image_file = request.FILES['file']
@@ -23,8 +26,7 @@ def image(request):
             image = cv2.imdecode(np.frombuffer(image_stream.read(), np.uint8), 1)
             
             image = preprocess(image)
-            
-            model = load_model('E:\\Django\\ImageRecognize\\uploadImage\\MyProject\\model2.keras')
+            model = load_model(os.path.join(os.getcwd(),'model2.keras'))
             pred = model.predict(image)
             
             pred_idx = np.argmax(pred[0])
