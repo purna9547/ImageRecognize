@@ -23,10 +23,10 @@
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      background: #8dd0e2;
+      background: #d5dfe2;
     }
     .drag-area {
-      border: 2px dashed #f41a1a;
+      border: 2px dashed #605a5a;
       height: 500px;
       width: 700px;
       border-radius: 5px;
@@ -35,6 +35,7 @@
       justify-content: center;
       flex-direction: column;
       transition: width 0.3s, height 0.3s;
+      background: #b1d8e9;
     }
     .drag-area.active {
       border: 2px solid #fff;
@@ -52,7 +53,7 @@
     .drag-area span {
       font-size: 25px;
       font-weight: 500;
-      color: #fff;
+      color: #070707;
       margin: 10px 0 15px 0;
     }
     .drag-area button {
@@ -61,14 +62,14 @@
       font-weight: 500;
       border: none;
       outline: none;
-      background: #fff;
+      background: #0b7ae1;
       color: #0b0b0b;
-      border-radius: 5px;
+      border-radius: 8px;
       cursor: pointer;
       transition: background 0.3s;
     }
     .drag-area button:hover {
-      background: #f1f1f1;
+      background: #2797ec;
     }
     .drag-area img {
       height: 100%;
@@ -80,7 +81,7 @@
     /* Responsive styles */
     @media (max-width: 768px) {
       .drag-area {
-        width: 90%;
+        width: 80%;
         height: 300px;
       }
       .drag-area .icon {
@@ -100,7 +101,7 @@
 
     @media (max-width: 480px) {
       .drag-area {
-        width: 100%;
+        width: 90%;
         height: 250px;
       }
       .drag-area .icon {
@@ -128,7 +129,6 @@
       <input type="file" hidden />
       <div id="result"></div>
     </div>
-
     <script>
       // Selecting all required elements
       const dropArea = document.querySelector(".drag-area"),
