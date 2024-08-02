@@ -27,6 +27,7 @@ def image(request):
             
             image = preprocess(image)
             model = load_model(os.path.join(os.getcwd(),'model2.keras'))
+            print(os.path.join('/home/intakhab/MyProject/','model2.keras'))
             pred = model.predict(image)
             
             pred_idx = np.argmax(pred[0])
